@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         
         VStack {
-            Text("What's So Funny 'Bout")
+            Text("Elvis Costello")
                 .font(.largeTitle)
                 .fontWeight(.black)
                 .foregroundColor(.purple)
@@ -33,21 +33,27 @@ struct ContentView: View {
                 .fontWeight(.black)
                 .foregroundColor(.purple)
             
+            
+            
+            
             Spacer()
-            HStack{
-                Button("Peace") {
-                    imagePic = "peacesign"
-                    messageString = "Peace"
-                }
-                Button("Love") {
-                    imagePic = "heart"
+            
+            Button("What's So Funnt 'Bout?") {
+                switch messageString{
+                case "Peace":
                     messageString = "Love"
-                }
-                Button("Understanding") {
-                    imagePic = "lightbulb"
+                    imagePic = "heart"
+                case "Love":
                     messageString = "Understanding"
+                    imagePic = "lightbulb"
+                default:
+                    messageString = "Peace"
+                    imagePic = "peacesign"
+
                 }
             }
+            
+            
             .buttonStyle(.borderedProminent)
             .tint(.purple)
             
